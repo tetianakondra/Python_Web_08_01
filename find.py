@@ -15,8 +15,10 @@ def find_author(name):
     authors = Author.objects(fullname__contains=(name))
     for auth in authors:
         quotes = Quote.objects(author=auth.id)
+        list_quotes = []
         for quote in quotes:
-            return f"Author with symbols in name {name} said: {quote.quote}"
+            list_quotes.append(f"Author with symbols in name {name} said: {quote.quote}")
+        return list_quotes
         
 
 @cache

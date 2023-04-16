@@ -22,7 +22,7 @@ connect(host=f"""mongodb+srv://{mongo_user}:{mongodb_pass}@{domain}/{db_name}?re
 class Author(Document):
     fullname = StringField(required=True)
     born_date = DateTimeField()
-    born_location = StringField(max_length=50)
+    born_location = StringField(max_length=500)
     description = StringField()
 
 
